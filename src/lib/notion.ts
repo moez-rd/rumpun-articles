@@ -43,7 +43,7 @@ const getPageMetaData = (post: any) => {
     // tags: getTags(post.properties.Tags.multi_select),
     // description: post.properties.Description.rich_text[0].plain_text,
     date: getToday(post.properties["Created time"].created_time),
-    slug: post.properties.Slug.rich_text[0].plain_text,
+    slug: post.properties.Slug.formula.string,
   };
 };
 
@@ -98,7 +98,7 @@ export const getSinglePost = async (slug: any) => {
   //   console.log(response);
 
   const page = response.results[0];
-  // console.log(page.properties["Created time"].created_time);
+  console.log(page);
   const metadata = getPageMetaData(page);
   const mdblocks = await n2m.pageToMarkdown(page.id);
   const mdString = n2m.toMarkdownString(mdblocks);

@@ -56,9 +56,7 @@ export default function Articles({ post }: any) {
               <ul className="my-6 ml-6 list-disc [&>li]:mt-2">{children}</ul>
             ),
             ol: ({ children }) => (
-              <ol className="my-6 ml-6 list-disc [&>li]:mt-2 list-decimal">
-                {children}
-              </ol>
+              <ol className="my-6 ml-6 [&>li]:mt-2 list-decimal">{children}</ol>
             ),
           }}
         >
